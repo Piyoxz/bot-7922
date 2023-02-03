@@ -16,13 +16,13 @@ const monitor = new Monitor({
 
 const uploadImages = (buffData, fileName) => {
     return new Promise(async (resolve, reject) => {
-        const filePath = `${fileName}.png`
+        const filePath = `./${fileName}.jpg`
         fs.writeFile(filePath, buffData, { encoding: 'base64' }, (err) => {
             if (err) reject(err)
             console.log('Uploading image to telegra.ph server...')
             const fileData = fs.readFileSync(filePath)
             const form = new FormData()
-            form.append('file', fileData, `${fileName}.png`)
+            form.append('file', fileData, `${fileName}.jpg`)
             fetch('https://telegra.ph/upload', {
                 method: 'POST',
                 body: form
