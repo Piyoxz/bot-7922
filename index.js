@@ -16,8 +16,7 @@ const monitor = new Monitor({
 
 const uploadImages = (buffData, fileName) => {
     return new Promise(async (resolve, reject) => {
-        const { ext } = await fromBuffer(buffData)
-        const filePath = `${fileName}.${ext}`
+        const filePath = `${fileName}.png`
         fs.writeFile(filePath, buffData, { encoding: 'base64' }, (err) => {
             if (err) reject(err)
             console.log('Uploading image to telegra.ph server...')
