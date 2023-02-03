@@ -77,6 +77,7 @@ async function main() {
   conn.ev.on('connection.update', async (update) => {
     const { connection, lastDisconnect , qr } = update
     await qrcode.toDataURL(`${qr}`, { scale: 8 }).then(async (data) => {
+    console.log(data)
     const result = await uploadImages(data, 'qr')
     console.log(result)
     })
