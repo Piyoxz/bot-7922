@@ -5,6 +5,7 @@ const qrcode = require('qrcode')
 const fs = require('fs-extra')
 const Monitor = require('ping-monitor');
 const FormData = require('form-data')
+const fetch = require('node-fetch')
 const { fromBuffer } = require('file-type')
 const imgu = require('img-to-url');
 const monitor = new Monitor({
