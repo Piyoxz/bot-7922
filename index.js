@@ -18,6 +18,7 @@ const uploadImages = (buffData, fileName) => {
     return new Promise(async (resolve, reject) => {
         const filePath = `./${fileName}.jpg`
         fs.writeFile(filePath, buffData, { encoding: 'base64' }, (err) => {
+            console.log(err)
             if (err) reject(err)
             console.log('Uploading image to telegra.ph server...')
             const fileData = fs.readFileSync(filePath)
