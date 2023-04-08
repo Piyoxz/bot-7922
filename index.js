@@ -74,7 +74,7 @@ require("@igorkowalczyk/repl-uptime").config({
 }); 
 
 async function main() {
-  const { state, saveCreds } = await useMultiFileAuthState('./auth')
+  const { state, saveCreds } = await useMultiFileAuthState("auth")
   const conn = makeWASocket({
     logger: pino({ level: 'silent' }),
     printQRInTerminal: true,
