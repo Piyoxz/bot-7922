@@ -2,10 +2,10 @@
     "name": "customer",
     "version": "1.0.0",
     "description": "",
-    "scripts": {
-        "run": "node index.js",
+    "main": "index.js",
+     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
-    },
+      },
     "dependencies": {
         "@adiwajshing/baileys": "github:adiwajshing/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
