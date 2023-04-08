@@ -84,13 +84,9 @@ async function main() {
 
 
   conn.ev.on('connection.update', async (update) => {
-    const { connection, lastDisconnect , qr } = update
+    const { connection, lastDisconnect } = update
     if (connection === 'close') {
       lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut ? main() : console.log('Koneksi Terputus...')
-    }
-    if (qr) {
-     const qrBuffer = qre.imageSync(qr, { type: 'png' });
-     fs.writeFileSync('qr-code.png', qrBuffer);
     }
     console.log('Koneksi Terhubung...')
   })
